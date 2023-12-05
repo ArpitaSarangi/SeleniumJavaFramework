@@ -1,6 +1,6 @@
 package Introduction;
 
-public class CoreJavaBrudhUp1 {
+public class CoreJavaBrushUp1 {
 
 	public static void main(String[] args) {
 		
