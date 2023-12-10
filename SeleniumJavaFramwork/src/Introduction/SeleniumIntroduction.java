@@ -16,11 +16,13 @@ public class SeleniumIntroduction {
 		//WebDriver ->abstract methods close,get
 		//WebDriver methods + class methods
 		
+		
 		//chromedriver.exe -> Chrome Browsers
+		//Selenium Manager  (Beta phase)
 		//System.setProperty("webdriver.chrome.driver","D://SOFTWARES/chromedriver.exe");
 		
 		//webdriver.chrome.driver -->value of path
-		//WebDriver driver=new ChromeDriver();
+		WebDriver driver=new ChromeDriver();
 		
 		//Firefox launch
 		//geckodriver
@@ -30,8 +32,8 @@ public class SeleniumIntroduction {
 		
 		//Launch Microsoft Edge
 		//Edge Browser
-		System.setProperty("webdriver.edge.driver", "D://SOFTWARES/msedgedriver.exe");
-		WebDriver driver=new EdgeDriver();
+		//.setProperty("webdriver.edge.driver", "D://SOFTWARES/msedgedriver.exe");
+		//WebDriver driver=new EdgeDriver();
 		
 		driver.get("https://rahulshettyacademy.com/");
 		System.out.println(driver.getTitle());
