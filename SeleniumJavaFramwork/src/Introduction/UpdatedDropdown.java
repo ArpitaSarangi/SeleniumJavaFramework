@@ -25,6 +25,25 @@ public class UpdatedDropdown {
 		System.out.println(driver.findElement(By.cssSelector("input[id*='SeniorCitizenDiscount']")).isSelected());
 		Assert.assertTrue(driver.findElement(By.cssSelector("input[id*='SeniorCitizenDiscount']")).isSelected());
 		
+		//ui-state-default.ui-state-highlight.ui-state-active
+		
+		System.out.println("*************************");
+		
+		//System.out.println(driver.findElement(By.name("ctl00$mainContent$view_date2")).isEnabled());	
+		System.out.println(driver.findElement(By.id("Div1")).getAttribute("style"));
+		driver.findElement(By.id("ctl00_mainContent_rbtnl_Trip_1")).click();
+		if(driver.findElement(By.id("Div1")).getAttribute("style").contains("1")) {
+			System.out.println("its enabled");
+			Assert.assertTrue(true);
+		}
+		else {
+			Assert.assertTrue(false);
+		}
+		
+		System.out.println(driver.findElement(By.id("Div1")).getAttribute("style"));
+		System.out.println(driver.findElement(By.name("ctl00$mainContent$view_date2")).isEnabled());
+		
+		
 		//Count the number of checkboxes present in UI
 		System.out.println(driver.findElements(By.cssSelector("input[type*='checkbox']")).size());
 		
