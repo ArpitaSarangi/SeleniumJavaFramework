@@ -15,36 +15,29 @@ public class FluentWaitTest {
 
 	public static void main(String[] args) {
 		System.setProperty("webdriver.chrome.driver", "D://SOFTWARES/chromedriver.exe");
-		WebDriver driver=new ChromeDriver();
+		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get("https://the-internet.herokuapp.com/dynamic_loading/1");
 		driver.findElement(By.cssSelector("[id='start'] button")).click();
-		
-		Wait<WebDriver> wait=new FluentWait<WebDriver>(driver)
-				.withTimeout(Duration.ofSeconds(30))
-				.pollingEvery(Duration.ofSeconds(3))
-				.ignoring(NoSuchElementException.class);
-		
-		
 
-		WebElement foo=wait.until(new Function<WebDriver,WebElement>() {
-			
+		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver).withTimeout(Duration.ofSeconds(30))
+				.pollingEvery(Duration.ofSeconds(3)).ignoring(NoSuchElementException.class);
+
+		WebElement foo = wait.until(new Function<WebDriver, WebElement>() {
+
 			public WebElement apply(WebDriver driver) {
-				
-				if(driver.findElement(By.cssSelector("[id='finish'] h4")).isDisplayed())
-				{
+
+				if (driver.findElement(By.cssSelector("[id='finish'] h4")).isDisplayed()) {
 					return driver.findElement(By.cssSelector("[id='finish'] h4"));
-				}else {
+				} else {
 					return null;
 				}
-				
+
 			}
-			
-			
+
 		});
-		
+
 		System.out.println(driver.findElement(By.cssSelector("[id='finish'] h4")).getText());
-		
 
 	}
 
