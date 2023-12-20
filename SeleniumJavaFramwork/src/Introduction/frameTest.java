@@ -12,11 +12,20 @@ public class frameTest {
 		WebDriver driver=new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get("https://jqueryui.com/droppable/");
-		driver.switchTo().frame(driver.findElement(By.cssSelector("iframe.demo-frame")));
+		System.out.println(driver.findElements(By.tagName("iframe")).size());
+		
+		driver.switchTo().frame(0);  //Frame with index value
+		
+		
+		//driver.switchTo().frame(driver.findElement(By.cssSelector("iframe.demo-frame"))); //frame(WebElement)
+		
+		
 		driver.findElement(By.id("draggable")).click();
 		Actions action=new Actions(driver);
 		
 		action.dragAndDrop(driver.findElement(By.id("draggable")), driver.findElement(By.id("droppable"))).build().perform();
+		
+		driver.switchTo().defaultContent(); //this will help to come back to normal window
 		
 		
 
