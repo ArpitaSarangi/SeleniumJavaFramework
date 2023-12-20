@@ -17,6 +17,10 @@ public class Assignment5 {
 		driver.switchTo().frame("frame-middle");
 
 		System.out.println(driver.findElement(By.id("content")).getText());
+		
+		//driver.switchTo().defaultContent();
+		driver.close();
+		
 	}
 
 }
