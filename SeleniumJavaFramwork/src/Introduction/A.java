@@ -1,6 +1,6 @@
 package Introduction;
 
-public class A {
+class A {
 	
 	public void test()
 	{

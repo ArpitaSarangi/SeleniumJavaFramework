@@ -1,6 +1,6 @@
 package Introduction;
 
-public class B extends A{
+ class B extends A{
 
 		public void test()
 		{
