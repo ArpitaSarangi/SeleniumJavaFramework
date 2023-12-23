@@ -26,6 +26,7 @@ public class Scope {
 
 		WebElement footerDriver = driver.findElement(By.id("gf-BIG"));
 		System.out.println(footerDriver.findElements(By.tagName("a")).size());
+		
 
 		// Q3.Get the links on the first column of the footer section
 		WebElement firstColumn = footerDriver.findElement(By.xpath("//table[@class=\"gf-t\"]/tbody/tr/td[1]/ul"));
