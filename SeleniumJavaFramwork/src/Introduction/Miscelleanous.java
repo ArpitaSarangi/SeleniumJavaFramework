@@ -29,7 +29,6 @@ public class Miscelleanous {
 		File src=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		//FileUtils.copyFile(src, new File("D:screenshot2.png"));
 		Files.copy(src, new File("D://screenshot5.png"));
-
 	}
 
 }
