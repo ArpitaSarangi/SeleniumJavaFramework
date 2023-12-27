@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.util.Iterator;
 import java.util.Set;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
@@ -35,8 +36,8 @@ public class NewWindow {
 
 		driver.switchTo().window(childId);
 		driver.get("https://rahulshettyacademy.com/");
-		
-		JavascriptExecutor js=(JavascriptExecutor)driver;
+
+		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,800)");
 
 		String courseName = driver.findElements(By.cssSelector("a[href*='https://courses.rahulshettyacademy.com/p']"))
@@ -45,17 +46,23 @@ public class NewWindow {
 		driver.switchTo().window(parentId);
 
 		/*
-		WebElement nameLabel = driver.findElement(By.xpath("//div[@class='form-group'][1]/label[1]"));
+		 * WebElement nameLabel =
+		 * driver.findElement(By.xpath("//div[@class='form-group'][1]/label[1]"));
+		 * 
+		 * driver.findElement(with(By.tagName("input")).below(nameLabel)).sendKeys(
+		 * courseName);
+		 */
 
-		driver.findElement(with(By.tagName("input")).below(nameLabel)).sendKeys(courseName);
-		*/
-		
-		driver.findElement(By.cssSelector("[name='name']")).sendKeys(courseName);
-		
-		File src=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-		Files.copy(src,new File("D://scrn11.png"));
+		WebElement name = driver.findElement(By.cssSelector("[name='name']"));
+		name.sendKeys(courseName);
+
+		File file = name.getScreenshotAs(OutputType.FILE);
+		FileUtils.copyFile(file, new File("NameEditBox.png"));
+
+		File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+		Files.copy(src, new File("D://scrn11.png"));
 		driver.quit();
-		
+
 	}
 
 }
