@@ -56,11 +56,18 @@ public class NewWindow {
 		WebElement name = driver.findElement(By.cssSelector("[name='name']"));
 		name.sendKeys(courseName);
 
+		// Screenshot of WebElement name
 		File file = name.getScreenshotAs(OutputType.FILE);
 		FileUtils.copyFile(file, new File("NameEditBox.png"));
 
+		// Screenshot Of Whole page
 		File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 		Files.copy(src, new File("D://scrn11.png"));
+
+		// Get Height & Width
+
+		System.out.println(name.getRect().getDimension().getHeight());
+		System.out.println(name.getRect().getDimension().getWidth());
 		driver.quit();
 
 	}
