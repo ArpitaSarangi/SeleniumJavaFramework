@@ -1,14 +1,21 @@
 package Assignements;
 
+import java.io.File;
+import java.io.IOException;
+
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
+import com.google.common.io.Files;
+
 public class Assignment2 {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		System.setProperty("webdriver.chrome.driver", "D://SOFTWARES/chromedriver.exe");
 		WebDriver driver=new ChromeDriver();
 		driver.manage().window().maximize();
@@ -28,6 +35,10 @@ public class Assignment2 {
 		
 		
 		System.out.println(driver.findElement(By.cssSelector(".alert.alert-success.alert-dismissible")).getText());
+		
+		File src=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		Files.copy(src, new File("D://Assignment2.png"));
+		driver.quit();
 	}
 
 }

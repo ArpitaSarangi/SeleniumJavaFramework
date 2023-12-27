@@ -1,17 +1,23 @@
 package Assignements;
 
+import java.io.File;
+import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 
+import com.google.common.io.Files;
+
 public class Assignment1 {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		System.setProperty("webdriver.chrome.driver", "D://SOFTWARES/chromedriver.exe");
 		WebDriver driver=new ChromeDriver();
 		driver.manage().window().maximize();
@@ -28,6 +34,9 @@ public class Assignment1 {
 		//How to get the count of number of checkboxes present in the page
 
 		System.out.println(driver.findElements(By.cssSelector("input[type='checkbox']")).size());
+		File src=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		Files.copy(src, new File("D://Assignment1.png"));
+		
 		driver.close();
 	}
 

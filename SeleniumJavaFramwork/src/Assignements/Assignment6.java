@@ -1,14 +1,21 @@
 package Assignements;
 
+import java.io.File;
+import java.io.IOException;
+
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
+import com.google.common.io.Files;
+
 public class Assignment6 {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 
 		// Steps
 		// 1.Select any check box
@@ -38,6 +45,9 @@ public class Assignment6 {
 	
 		Assert.assertEquals(driver.switchTo().alert().getText(), "Hello "+labelName+", share this practice page and share your knowledge");
 		driver.switchTo().alert().accept();
+		
+		File src=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		Files.copy(src, new File("D://Assignment6.png"));
 
 	}
 
