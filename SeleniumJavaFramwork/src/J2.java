@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 public class J2 {
 	@Test
 	public void check() {
-		J1.login("Arpita");
+		
 		System.setProperty("webdriver.chrome.driver", "D://SOFTWARES/chromedriver.exe");
 		WebDriver driver=new ChromeDriver();
 		driver.manage().window().maximize();
