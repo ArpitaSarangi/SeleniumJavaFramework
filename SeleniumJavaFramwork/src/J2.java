@@ -18,7 +18,7 @@ public class J2 {
 		driver.manage().window().maximize();
 		
 		driver.get("https://www.opentext.com/");
-		driver.manage().co
+		//driver.manage().co
 		
 		driver.findElement(By.id("onetrust-accept-btn-handler")).click();
 		
