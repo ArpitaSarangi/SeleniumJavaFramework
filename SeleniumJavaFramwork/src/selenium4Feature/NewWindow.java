@@ -34,7 +34,7 @@ public class NewWindow {
 		String parentId = it.next();
 		String childId = it.next();
 
-		driver.switchTo().window(childId);
+		driver.switchTo().window(childId);   
 		driver.get("https://rahulshettyacademy.com/");
 
 		JavascriptExecutor js = (JavascriptExecutor) driver;
