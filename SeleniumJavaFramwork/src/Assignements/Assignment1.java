@@ -23,6 +23,7 @@ public class Assignment1 {
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2000));
 		driver.get("https://rahulshettyacademy.com/AutomationPractice/");
+		
 
 		//Check the first checkbox and verify if it is succcessfully checked and uncheck it again to verify if it is successfully unchecked
 
