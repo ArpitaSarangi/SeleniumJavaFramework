@@ -10,7 +10,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class J2 {
+public class OpenText {
 	@Test
 	public void check() throws InterruptedException {
 

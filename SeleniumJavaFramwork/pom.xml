@@ -6,6 +6,10 @@
 	<artifactId>SeleniumJavaFramwork</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
+	<properties>
+        <version.commons-io>2.4</version.commons-io>
+    </properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
@@ -17,9 +21,15 @@
 		<dependency>
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
-			<version>7.8.0</version>
+			<version>7.10.1</version>
 		</dependency>
-
+		
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>${version.commons-io}</version>
+        </dependency>
+       
 	</dependencies>
 
 	<build>
