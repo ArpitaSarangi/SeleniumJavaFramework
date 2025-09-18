@@ -7,14 +7,26 @@
 	<version>0.0.1-SNAPSHOT</version>
 
 	<properties>
-        <version.commons-io>2.4</version.commons-io>
-    </properties>
+		<version.commons-io>2.4</version.commons-io>
+	</properties>
 
 	<dependencies>
+
+
+		<!--
+		https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>
-			<version>4.16.1</version>
+			<version>4.35.0</version>
+		</dependency>
+
+		<!--
+		https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
+		<dependency>
+			<groupId>io.github.bonigarcia</groupId>
+			<artifactId>webdrivermanager</artifactId>
+			<version>6.2.0</version>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.testng/testng -->
@@ -23,13 +35,13 @@
 			<artifactId>testng</artifactId>
 			<version>7.10.1</version>
 		</dependency>
-		
-        <dependency>
-            <groupId>commons-io</groupId>
-            <artifactId>commons-io</artifactId>
-            <version>${version.commons-io}</version>
-        </dependency>
-       
+
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>${version.commons-io}</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>

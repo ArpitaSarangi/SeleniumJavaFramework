@@ -17,21 +17,20 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.google.common.io.Files;
 
-import dev.failsafe.internal.util.Durations;
+//import dev.failsafe.internal.util.Durations;
 
 public class Assignment3 {
 
 	public static void main(String[] args) throws IOException {
-		System.setProperty("webdriver.chrome.driver", "D://SOFTWARES/chromedriver.exe");
+		//System.setProperty("webdriver.chrome.driver", "D://SOFTWARES/chromedriver.exe");
 		WebDriver driver=new ChromeDriver();
 		driver.manage().window().maximize();
 		
 		login(driver);
-		
 		products(driver);
 		
 		File src=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-		Files.copy(src, new File("D://Assignment3.png"));
+		Files.copy(src, new File("/Users/arpitasarangi/Downloads/Assignment3.jpeg"));
 		
 	}
 	public static void login(WebDriver driver) {

@@ -13,7 +13,7 @@ public class TestAction {
 		String projectPath=System.getProperty("user.dir");
 		System.out.println("projectPath :"+projectPath);
 		
-		System.setProperty("webdriver.chrome.driver",projectPath+"//drivers/chromedriver/chromedriver");
+		//System.setProperty("webdriver.chrome.driver",projectPath+"//drivers/chromedriver/chromedriver");
 		//System.setProperty("webdriver.chrome.driver", "/Users/arpitasarangi/Downloads/chromedriver-mac-arm64/chromedriver");
 		
 		WebDriver driver=new ChromeDriver();
